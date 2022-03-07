@@ -1,4 +1,4 @@
-FROM nginx:1.17.1-alpine
+FROM nginx:1.21.6-alpine
 
 COPY ./config/nginx.conf /etc/nginx/
 COPY ./sites /etc/nginx/sites-available
