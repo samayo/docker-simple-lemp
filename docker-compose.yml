@@ -2,7 +2,7 @@ version: '3'
 
 services:
     db:
-      container_name: ${APP_NAME}-db
+      container_name: ${APP_NAME}-mariadb
       build:
         context: ./mariadb
       volumes:
@@ -22,7 +22,7 @@ services:
         - default
       restart: always
     nginx:
-      container_name: ${APP_NAME}-server
+      container_name: ${APP_NAME}-nginx
       build:
         context: ./nginx
         args:

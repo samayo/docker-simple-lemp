@@ -1,4 +1,4 @@
-FROM php:7.1-fpm
+FROM php:8.1-fpm
 ARG TIMEZONE
 
 RUN apt-get update && apt-get install -y \
@@ -16,7 +16,7 @@ RUN printf '[PHP]\ndate.timezone = "%s"\n', ${TIMEZONE} > /usr/local/etc/php/con
 RUN "date"
 
 RUN apt-get update && apt-get install -y libmcrypt-dev mariadb-client \
-    && docker-php-ext-install mcrypt pdo_mysql mysqli json
+    && docker-php-ext-install pdo_mysql mysqli json
 
 
 RUN apt-get update && apt-get install -y procps
