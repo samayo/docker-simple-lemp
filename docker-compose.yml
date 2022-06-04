@@ -42,7 +42,7 @@ services:
     php-fpm:
       container_name: ${APP_NAME}-php
       build:
-          context: ./php7-fpm
+          context: ./php8-fpm
           args:
               TIMEZONE: ${TIMEZONE}
       volumes:
