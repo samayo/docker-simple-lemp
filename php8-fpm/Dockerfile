@@ -16,7 +16,7 @@ RUN printf '[PHP]\ndate.timezone = "%s"\n', ${TIMEZONE} > /usr/local/etc/php/con
 RUN "date"
 
 RUN apt-get update && apt-get install -y libmcrypt-dev mariadb-client \
-    && docker-php-ext-install pdo_mysql mysqli json
+    && docker-php-ext-install pdo_mysql mysqli bcmath
 
 
 RUN apt-get update && apt-get install -y procps
