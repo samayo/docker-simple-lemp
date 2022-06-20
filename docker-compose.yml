@@ -47,7 +47,7 @@ services:
               TIMEZONE: ${TIMEZONE}
       volumes:
           - ${APP_PATH}:/var/www/app
-          - ./php7-fpm/config/php.ini:/usr/local/etc/php/php.ini
+          - ./php8-fpm/config/php.ini:/usr/local/etc/php/php.ini
       environment:
           DB_HOST: db
           DB_PORT: 3306
