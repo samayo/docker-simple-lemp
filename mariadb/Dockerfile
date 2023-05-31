@@ -1,6 +1,6 @@
 FROM mariadb:10.3
 
-COPY ./config/my.cnf /etc/mysql/conf.d/my.cnf
+COPY ./config/my.cnf /etc/mysql/my.cnf
 
 CMD ["mysqld"]
 

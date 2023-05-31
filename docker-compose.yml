@@ -7,7 +7,7 @@ services:
         context: ./mariadb
       volumes:
           - ./mariadb/scripts:/docker-entrypoint-initdb.d
-          - ./.data/db:/var/lib/mysql
+          - ${DB_DATA_PATH}:/var/lib/mysql
           - ./logs/mariadb:/var/log/mysql
       environment:
           MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
@@ -26,8 +26,8 @@ services:
       build:
         context: ./nginx
         args:
-          - 'php-fpm'
-          - '9000'
+          - PHP_UPSTREAM_CONTAINER=php-fpm
+          - PHP_UPSTREAM_PORT=9000
       volumes:
         - ${APP_PATH}:/var/www/app
         - ./logs/nginx/:/var/log/nginx
